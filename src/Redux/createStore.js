@@ -5,12 +5,12 @@ import { logger } from 'redux-logger';
 
 
 import rootSaga from '../Saga'
-import reducer from './reducer'
+import reducers from '../Redux/indexReducers'
 
 const sagaMiddleware = createSagaMiddleware()
 
 export const store = createStore(
-    reducer,
+    reducers,
     applyMiddleware(sagaMiddleware,logger)
 )
 sagaMiddleware.run(rootSaga)

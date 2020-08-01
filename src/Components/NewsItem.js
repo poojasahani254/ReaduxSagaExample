@@ -13,22 +13,25 @@ const articleStyle = {
     color: 'olive'
 }
 
-let NewsItem = ({ article }) => {
-    return (article ?
+let NewsItem = ({ article,testMessage }) => {
+    return (article && article.length > 0 || testMessage ?
         article.map((item)=>{return(
             <article style={articleStyle} >
                 <div>
+                    <h1>{testMessage}</h1>
                     <h1>{item.title}</h1>
                     <img style={imgStyle} src={item.urlToImage} alt="" />
                     <h4>{item.description}</h4>
                     <a href={item.url} target="_blank">READ MORE</a>
                 </div>
             </article>
-        )}) :
-        null
+        )}) : <></>
 )};
 
-const mapStateToProps = (state) => ({
-    article: state.news,
+const mapStateToProps = (state) => {
+    return({
+    article: state.reducer.news,
+    testMessage: state.reducer.data,
 })
+}
 export default connect(mapStateToProps,null)(NewsItem)
