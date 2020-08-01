@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux'
 // import img from '../loading_spinner.gif'
 let Loading = ({ loading }) => {
-    debugger
     return (
         loading ?
         <div style={{ textAlign: 'center' }}>

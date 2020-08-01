@@ -8,6 +8,7 @@ import rootSaga from '../Saga'
 import reducer from './reducer'
 
 const sagaMiddleware = createSagaMiddleware()
+
 export const store = createStore(
     reducer,
     applyMiddleware(sagaMiddleware,logger)

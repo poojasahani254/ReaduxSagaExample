@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { getNews } from '../Redux/actions';
 
 let Button=({getNews})=>{
-    debugger
     return (
         <button onClick={getNews}>Press to see news</button>
     )

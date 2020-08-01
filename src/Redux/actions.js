@@ -1,5 +1,4 @@
 export const getNews = () => {
-    debugger
     return ({
-    type: 'GET_NEWS',
+      type: 'GET_NEWS',
 })};

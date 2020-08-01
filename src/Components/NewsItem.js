@@ -14,7 +14,6 @@ const articleStyle = {
 }
 
 let NewsItem = ({ article }) => {
-    debugger
     return (article ?
         article.map((item)=>{return(
             <article style={articleStyle} >
@@ -32,5 +31,4 @@ let NewsItem = ({ article }) => {
 const mapStateToProps = (state) => ({
     article: state.news,
 })
-debugger
 export default connect(mapStateToProps,null)(NewsItem)
